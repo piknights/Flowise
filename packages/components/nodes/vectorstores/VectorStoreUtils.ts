@@ -40,6 +40,11 @@ export const resolveVectorStoreOrRetriever = (
     }
 }
 
+//  default version for backward compatibility if a vector database employs API such as fastAPI
+export const VectorStoreConfig = {
+    chromaAPIVersion: parseFloat(process.env.CHROMA_API_VERSION || '2.0'),
+}
+
 export const addMMRInputParams = (inputs: any[]) => {
     const mmrInputParams = [
         {

@@ -6,6 +6,7 @@ import { ICommonObject, INode, INodeData, INodeOutputsValue, INodeParams, Indexi
 import { getBaseClasses, getCredentialData, getCredentialParam } from '../../../src/utils'
 import { ChromaExtended } from './core'
 import { index } from '../../../src/indexing'
+import { VectorStoreConfig } from '../VectorStoreUtils';
 
 class Chroma_VectorStores implements INode {
     label: string
@@ -24,7 +25,7 @@ class Chroma_VectorStores implements INode {
     constructor() {
         this.label = 'Chroma'
         this.name = 'chroma'
-        this.version = 2.0
+        this.version = VectorStoreConfig.chromaAPIVersion
         this.type = 'Chroma'
         this.icon = 'chroma.svg'
         this.category = 'Vector Stores'
